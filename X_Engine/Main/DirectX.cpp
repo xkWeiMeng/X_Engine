@@ -22,6 +22,7 @@ POINT mousePoint;
 char keys[256];
 char keys_down[256];
 
+
 // ÷±˙ ‰»Î
 XINPUT_GAMEPAD controllers[4];
 

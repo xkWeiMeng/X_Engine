@@ -12,5 +12,6 @@ public:
 	virtual void Render() {};
 	//场景的逻辑更新函数
 	virtual void Update() {};
+
 };
 

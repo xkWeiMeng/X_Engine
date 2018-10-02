@@ -118,8 +118,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//create window
 	MyRegisterClass(hInstance);
 	if (!InitInstance(hInstance, nCmdShow)) return -1;
-
-
+	//游戏初始化
+	//
 	while (!Gameover)
 	{
 		//如果有Windows消息则优先处理
