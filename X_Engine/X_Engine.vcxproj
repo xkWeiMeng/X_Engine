@@ -132,16 +132,20 @@
     <Image Include="icon1.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Main\DirectSound.cpp" />
     <ClCompile Include="Main\DirectX.cpp" />
     <ClCompile Include="Main\Window.cpp" />
     <ClCompile Include="Main\XE_Global.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameMain.h" />
     <ClInclude Include="Main\DirectSound.h" />
     <ClInclude Include="Main\DirectX.h" />
     <ClInclude Include="Main\Window.h" />
     <ClInclude Include="Main\XE_Global.h" />
+    <ClInclude Include="Scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
