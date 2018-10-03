@@ -2,6 +2,16 @@
 #include "KeyMouseMsg.h"
 #include "Main/DirectX.h"
 #include "Main/XE_Global.h"
+namespace kmMsg {
+	char keys[256];
+	char keys_down[256];
+	//鼠标状态
+	DIMOUSESTATE mouseState;
+
+	bool Key_Up(int key);
+	bool Key_Down(int key);
+};
+using namespace kmMsg;
 
 vector<int> gameMsg;
 
@@ -17,17 +27,13 @@ KeyMouseMsg::~KeyMouseMsg()
 {
 }
 
-char keys[256];
-char keys_down[256]; 
-//鼠标状态
-DIMOUSESTATE mouseState;
-
-bool Key_Down(int key)
+//检查按键是否按下
+bool kmMsg::Key_Down(int key)
 {
 	return (bool)(keys[key] & 0x80);
 }
-
-bool Key_Up(int key)
+//检查按键是否释放
+bool kmMsg::Key_Up(int key)
 {
 	//判断以往帧是否已经按下
 	if ((bool)(keys_down[key] & 0x80))
@@ -46,6 +52,7 @@ bool Key_Up(int key)
 	}
 	return false;
 }
+
 void KeyMouseMsg::ReadKeyState(HWND hWnd)
 {
 	//更新鼠标
@@ -83,10 +90,10 @@ void KeyMouseMsg::ReadKeyState(HWND hWnd)
 void KeyMouseMsg::ProductionMsg()
 {
 	//在这里生成自己需要的消息，即gameMsg,然后在游戏循环中处理这些消息
-	if (Key_Down(Global::KeyMouseMsg::playerOneDown))
-	{
-		gameMsg[0] = 1;
-	}
+	//if (Key_Down(Global::KeyMouseMsg::playerOneDown))
+	//{
+	//	gameMsg[0] = 1;
+	//}
 	//类推
 
 	////处理键盘按键状态，生成按键消息

@@ -1,7 +1,7 @@
 #pragma once
 #include<vector>
 #include<Windows.h>
-extern vector<int> gameMsg;
+extern std::vector<int> gameMsg;
 class KeyMouseMsg
 {
 public:
@@ -10,6 +10,4 @@ public:
 	void ReadKeyState(HWND);
 	void ProductionMsg();
 };
-
-
 

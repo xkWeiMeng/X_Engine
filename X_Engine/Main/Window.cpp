@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <String>
+#include"../GameMain.h"
 #include "XE_Global.h"
 using namespace std;
 
