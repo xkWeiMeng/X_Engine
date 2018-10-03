@@ -7,7 +7,7 @@ using namespace std;
 HWND window;
 HDC device;
 bool Gameover = false;
-
+void ShowMessage(string text);
 // Window callback function
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -120,6 +120,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	MyRegisterClass(hInstance);
 	if (!InitInstance(hInstance, nCmdShow)) return -1;
 	//游戏初始化
+	if (!Game_Init(window)) {
+		ShowMessage("游戏初始化失败");
+		return -1;
+	}
 	//
 	while (!Gameover)
 	{
@@ -131,10 +135,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else {
 
+			//获取当前时间，精确到毫秒
+			currentTime = timeGetTime();
+
+			//-------计算帧率--------
+			//每执行一次循环currentCount自加1
+			currentCount++;
+			//相比上一次循环过了1秒钟后，currentCount即为当前的FPS帧率
+			if (currentTime > lastCurrentTime + 1000)
+			{
+				//Global::Debug::currentFPS = currentCount;
+				currentCount = 0;
+				lastCurrentTime = currentTime;
+			}
+			//-----------------------
+
+			//设定逻辑刷新速度为指定的帧率，当与上一次刷新的时间间隔超过了帧率的倒数时，执行Update
+			if (currentTime > refreshTime + 1000.0f / 480)
+			{
+				refreshTime = currentTime;
+				Game_Update(window);//DirectX循环
+			}
+
+			//其余时间全用来渲染
+			Game_Render(window, device);//DirectX渲染
 		}
+
 	}
 	//释放资源
-
+	Game_Free(window, device);
 	return msg.wParam;
 }
 
