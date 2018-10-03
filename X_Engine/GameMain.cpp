@@ -4,6 +4,8 @@
 #include"Main\XE_Global.h"
 #include"Main\DirectSound.h"
 #include<Windows.h>
+//场景头文件
+#include"GameMainScene.h"
 
 //当前游戏的场景
 Scene *scene = NULL;
@@ -24,7 +26,8 @@ bool Game_Init(HWND window)
 		ShowMessage("Direct Sound 初始化失败");
 		return false;
 	}
-	
+	scene = new GameMainScene();
+	scene->Init();
 	return true;
 }
 

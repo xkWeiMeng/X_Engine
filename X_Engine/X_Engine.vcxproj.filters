@@ -52,6 +52,9 @@
     <ClCompile Include="KeyMouseMsg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GameMainScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main\DirectSound.h">
@@ -73,6 +76,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="KeyMouseMsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMainScene.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

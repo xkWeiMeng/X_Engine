@@ -20,6 +20,7 @@ DIMOUSESTATE mouseState;
 
 //Direct3D线对象
 LPD3DXLINE g_pLine = NULL; 
+
 ////线段顶点 
 //D3DXVECTOR2* g_pLineArr = NULL;
 
@@ -81,6 +82,11 @@ void Direct3D_Shutdown()
     if (spriteObj) spriteObj->Release();
     if (d3dDev) d3dDev->Release();
     if (d3d) d3d->Release();
+
+	if (g_pLine != NULL)
+	{
+		g_pLine->Release();
+	}
 }
 //画表面
 void DrawSurface(LPDIRECT3DSURFACE9 dest, float x, float y, LPDIRECT3DSURFACE9 source)
