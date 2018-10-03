@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\base">
+      <UniqueIdentifier>{9b448ef6-9720-4910-a903-ff950b891908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\base">
+      <UniqueIdentifier>{a171c42d-aeeb-4bad-bf2a-d02045d7e770}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="X_Engine.rc">
@@ -26,30 +32,54 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\DirectSound.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\base</Filter>
     </ClCompile>
     <ClCompile Include="Main\DirectX.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\base</Filter>
     </ClCompile>
     <ClCompile Include="Main\Window.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\base</Filter>
     </ClCompile>
     <ClCompile Include="Main\XE_Global.cpp">
+      <Filter>源文件\base</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMouseMsg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMainScene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main\DirectSound.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件\base</Filter>
     </ClInclude>
     <ClInclude Include="Main\DirectX.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件\base</Filter>
     </ClInclude>
     <ClInclude Include="Main\Window.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件\base</Filter>
     </ClInclude>
     <ClInclude Include="Main\XE_Global.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMouseMsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMainScene.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
