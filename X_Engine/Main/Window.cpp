@@ -142,3 +142,8 @@ void EndApplication()
 {
 	PostMessage(window, WM_DESTROY, 0, 0);
 }
+//弹出一个以游戏标题为标题，带有一个确定按钮的消息框
+void ShowMessage(string text)
+{
+	MessageBox(window, text.c_str(), Global::Window::GameTitle.c_str(), MB_OK);
+}

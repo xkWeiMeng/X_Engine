@@ -18,6 +18,11 @@ LPDIRECTINPUTDEVICE8 diKeyboard = NULL;
 //鼠标状态
 DIMOUSESTATE mouseState;
 
+//Direct3D线对象
+LPD3DXLINE g_pLine = NULL; 
+////线段顶点 
+//D3DXVECTOR2* g_pLineArr = NULL;
+
 POINT mousePoint;
 char keys[256];
 char keys_down[256];
@@ -62,6 +67,11 @@ bool Direct3D_Init(HWND window, int width, int height, bool fullscreen)
 
     //create sprite object
     D3DXCreateSprite(d3dDev, &spriteObj);
+	//创建DirectX3D线对象
+	if (D3DXCreateLine(d3dDev, &g_pLine))
+	{
+		return false;
+	}
 
     return 1;
 }

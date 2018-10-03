@@ -77,20 +77,23 @@ void KeyMouseMsg::ReadKeyState(HWND hWnd)
 	//    if (result == 0) controllers[i] = state.Gamepad;
 	//}
 
-	//处理键盘按键状态，生成按键消息
-	for (int i = 0; i < 256; i++)
-	{
-		//轮询键盘状态
-		Key_Up(i);
-	}
+
 }
 
 void KeyMouseMsg::ProductionMsg()
 {
+	//在这里生成自己需要的消息，即gameMsg,然后在游戏循环中处理这些消息
 	if (Key_Down(Global::KeyMouseMsg::playerOneDown))
 	{
 		gameMsg[0] = 1;
 	}
 	//类推
+
+	////处理键盘按键状态，生成按键消息
+	//for (int i = 0; i < 256; i++)
+	//{
+	//	//轮询键盘状态
+	//	Key_Up(i);
+	//}
 }
 
